@@ -1,6 +1,23 @@
 # Tree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+This is a test project to display a tree view of an array of objects. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1. The other libraries used are momentJS, Lodash, and Bootstrap 4.0.
+
+## Get started
+
+### Clone the repo
+
+```shell
+git clone https://github.com/niranjanshankar/tree
+cd tree
+```
+
+### Install npm packages
+
+Install the `npm` packages described in the `package.json` and verify that it works:
+
+```shell
+npm install
+```
 
 ## Development server
 
