@@ -1,0 +1,51 @@
+p {
+    margin: 0;
+}
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 12px;
+
+    p {
+        cursor: pointer;
+        padding: 8px;
+        &:hover {
+            background-color: #33B5DD;
+            color: #ffffff;
+        }
+    }
+}
+
+.subcategory-container {
+    margin: 0 0 12px 12px;
+    padding: 4px;
+    border: 1px solid #000000;
+    cursor: pointer;
+
+    > p span {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    &:hover {
+        background-color: #cccccc;
+    }
+}
+
+.modal-body {
+    p {
+        margin: 8px 0;
+
+        span {
+            text-decoration: underline;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        outline: none;
+    }
+}

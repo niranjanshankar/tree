@@ -1,0 +1,38 @@
+<p *ngIf="isLoading">Loading....</p>
+<p *ngIf="isError">Sorry, unable to load the data. Please retry!</p>
+<section class="wrapper-container" *ngIf="!isLoading && !isError">
+  <!-- groupBy filters -->
+  <div class="filter-container">
+    Group by:
+    <p (click)="groupDataByKey('author')">Author </p> |
+    <p (click)="groupDataByKey('location')"> Location</p>
+  </div>
+  <!-- bootstrap accordion -->
+  <accordion>
+    <accordion-group *ngFor="let key of keyList" heading="{{key}}">
+      <div *ngFor="let item of data[key]" class="subcategory-container" (click)="openModal(popup, item)">
+        <p> <span>ID</span>:{{item.id}} </p>
+      </div>
+    </accordion-group>
+  </accordion>
+</section>
+
+<!-- Bootstrap popup modal -->
+<ng-template #popup>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Data</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p> <span>ID:</span>{{dataToEdit.id}}</p>
+    <p *ngIf="dataToEdit.time"> <span>Time:</span>{{dataToEdit.time}}</p>
+    <p *ngIf="dataToEdit.location !== undefined"><span>Location:</span> <input type="text"
+        [(ngModel)]="dataToEdit.location"></p>
+    <p *ngIf="dataToEdit.author !== undefined"><span>Author:</span> <input type="text" [(ngModel)]="dataToEdit.author">
+    </p>
+    <p> <span>Text:</span>{{dataToEdit.text}} </p>
+    <button (click)="updateData()">Update</button>
+  </div>
+</ng-template>
